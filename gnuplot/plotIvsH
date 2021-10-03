@@ -1,0 +1,32 @@
+#!/usr/bin/gnuplot
+# Gnuplot script to plot H-probe current vs field. 
+
+set title "H-probe Panel Meter Current"
+set xlabel "H[A/m]"
+set ylabel "I[uA]"
+
+#set key left top 
+#set key center top 
+#set key at 0.90, 98 
+set key at 1.47, 98 
+
+set grid
+set yrange [0:100]
+
+set style line 1 linecolor "red" linewidth 2
+set style line 2 linecolor "blue" linewidth 2
+set style line 3 linecolor "purple" linewidth 2
+set style line 4 linecolor "brown" linewidth 2
+set style line 5 linecolor "forest-green" linewidth 2
+
+#set term png
+#set output "Hcalibration20211003.png"
+set term pdf
+set output "Hcalibration20211003.pdf"
+
+plot "Hcalibration20211003.txt" using (sqrt($1/50)/0.21):2 with linespoints ls 1 title "1815 kHz", \
+     "Hcalibration20211003.txt" using (sqrt($1/50)/0.21):3 with linespoints ls 2 title "3564 kHz", \
+     "Hcalibration20211003.txt" using (sqrt($1/50)/0.21):4 with linespoints ls 4 title "7035 kHz", \
+     "Hcalibration20211003.txt" using (sqrt($1/50)/0.21):5 with linespoints ls 5 title "10110 kHz", \
+     "Hcalibration20211003.txt" using (sqrt($1/50)/0.21):6 with linespoints ls 3 title "14065 kHz"
+

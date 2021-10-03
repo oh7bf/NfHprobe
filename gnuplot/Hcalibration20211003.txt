@@ -1,0 +1,15 @@
+# H-probe current reading [uA] at different frequencies in loop center. 
+# 0.21 m diameter loop with 50 ohm series resistor with H = I/0.21 m.
+# I = sqrt( P / 50 ohm).
+#
+# Power[W]  1815kHz 3564kHz  7035kHz  10110kHz  14065kHz
+0.016       0       0        18       8         0
+0.032       0       0        28       14        2
+0.063       0       1        40       20        5
+0.125       0       4        60       32        10
+0.25        1       9        88       50        20
+0.5         3       17       -        72        35
+1.0         7       26       -        -         54
+2.5         20      50       -        -         94
+5.0         34      76       -        -         -
+
